@@ -1,0 +1,64 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/ribble-core",
+    "crates/ribble-math",
+    "crates/ribble-ecs",
+    "crates/ribble-window",
+    "crates/ribble-render",
+    "crates/ribble-assets",
+    "crates/ribble-audio",
+    "crates/ribble-net",
+    "crates/ribble-editor",
+    "crates/ribble",
+]
+default-members = ["crates/ribble"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+authors = ["Mathijs Follon"]
+#repository = "https://github.com/mathijs-follon/ribble"
+
+[workspace.dependencies]
+# Internal crates
+ribble-core = { path = "crates/ribble-core", version = "0.1.0" }
+ribble-math = { path = "crates/ribble-math", version = "0.1.0" }
+ribble-ecs = { path = "crates/ribble-ecs", version = "0.1.0" }
+ribble-window = { path = "crates/ribble-window", version = "0.1.0" }
+ribble-render = { path = "crates/ribble-render", version = "0.1.0" }
+ribble-assets = { path = "crates/ribble-assets", version = "0.1.0" }
+ribble-audio = { path = "crates/ribble-audio", version = "0.1.0" }
+ribble-net = { path = "crates/ribble-net", version = "0.1.0" }
+ribble-editor = { path = "crates/ribble-editor", version = "0.1.0" }
+
+# External
+#glam = "0.29"
+#hecs = "0.10"
+#winit = "0.30"
+#wgpu = "24"
+#pollster = "0.4"
+#bytemuck = { version = "1", features = ["derive"] }
+#tracing = "0.1"
+#tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+#thiserror = "2"
+#anyhow = "1"
+#serde = { version = "1", features = ["derive"] }
+#serde_json = "1"
+#image = "0.25"
+#egui = "0.31"
+#egui-wgpu = "0.31"
+#egui-winit = "0.31"
+#rodio = "0.20"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

@@ -1,0 +1,21 @@
+[package]
+name = "ribble-math"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Math types and utilities for the Ribble game engine"
+publish = false
+
+[lib]
+name = "ribble_math"
+path = "src/lib.rs"
+
+[dependencies]
+
+[dev-dependencies]
+
+[features]
+default = []
+

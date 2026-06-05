@@ -1,0 +1,20 @@
+[package]
+name = "ribble-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Core runtime for the Ribble game engine: app lifecycle, plugins, schedules, and resources"
+publish = false
+
+[lib]
+name = "ribble_core"
+path = "src/lib.rs"
+
+[dependencies]
+
+[dev-dependencies]
+
+[features]
+default = []

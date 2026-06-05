@@ -1,0 +1,61 @@
+[package]
+name = "ribble"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Ribble, a modular Rust game engine"
+readme = "../../README.md"
+publish = false
+
+[lib]
+name = "ribble"
+path = "src/lib.rs"
+
+#[[example]]
+#name = "hello_window"
+#path = "../../examples/hello_window.rs"
+#
+#[[example]]
+#name = "headless"
+#path = "../../examples/headless.rs"
+#
+#[[example]]
+#name = "editor"
+#path = "../../examples/editor.rs"
+#required-features = ["editor"]
+
+[dependencies]
+ribble-core = { workspace = true }
+ribble-math = { workspace = true }
+#tracing = { workspace = true }
+#tracing-subscriber = { workspace = true }
+
+# Optional subsystems
+ribble-ecs = { workspace = true, optional = true }
+ribble-window = { workspace = true, optional = true }
+ribble-render = { workspace = true, optional = true }
+ribble-assets = { workspace = true, optional = true }
+ribble-audio = { workspace = true, optional = true }
+ribble-net = { workspace = true, optional = true }
+ribble-editor = { workspace = true, optional = true }
+
+[features]
+default = ["window", "render", "ecs", "assets"]
+
+# Core subsystems
+window = ["dep:ribble-window"]
+render = ["dep:ribble-render", "window"]
+ecs = ["dep:ribble-ecs"]
+assets = ["dep:ribble-assets"]
+
+# Optional subsystems
+audio = ["dep:ribble-audio", "assets"]
+net = ["dep:ribble-net"]
+editor = ["dep:ribble-editor", "ecs"]
+
+# Convenience bundles
+full = ["default", "audio", "net", "editor"]
+
+[dev-dependencies]
