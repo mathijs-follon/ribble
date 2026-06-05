@@ -52,3 +52,7 @@ version = "0.1.0"
 [[package]]
 name = "ribble-window"
 version = "0.1.0"
+
+[[package]]
+name = "sandbox"
+version = "0.1.0"

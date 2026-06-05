@@ -8,8 +8,8 @@ cd "$root"
 export CARGO_TERM_COLOR="${CARGO_TERM_COLOR:-always}"
 export RUSTFLAGS="${RUSTFLAGS:--Dwarnings}"
 
-echo "==> cargo fmt --all -- --check"
-cargo fmt --all -- --check
+echo "==> cargo fmt --all"
+cargo fmt --all
 
 echo "==> cargo test --all"
 cargo test --all

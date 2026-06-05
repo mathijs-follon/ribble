@@ -11,6 +11,7 @@ members = [
     "crates/ribble-net",
     "crates/ribble-editor",
     "crates/ribble",
+    "sandbox"
 ]
 default-members = ["crates/ribble"]
 

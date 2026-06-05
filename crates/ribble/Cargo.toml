@@ -13,18 +13,9 @@ publish = false
 name = "ribble"
 path = "src/lib.rs"
 
-#[[example]]
-#name = "hello_window"
-#path = "../../examples/hello_window.rs"
-#
-#[[example]]
-#name = "headless"
-#path = "../../examples/headless.rs"
-#
-#[[example]]
-#name = "editor"
-#path = "../../examples/editor.rs"
-#required-features = ["editor"]
+[[example]]
+name = "hello_world"
+path = "../../examples/hello_world.rs"
 
 [dependencies]
 ribble-core = { workspace = true }
