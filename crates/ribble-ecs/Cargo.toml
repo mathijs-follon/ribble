@@ -12,10 +12,10 @@ publish = false
 name = "ribble_ecs"
 path = "src/lib.rs"
 
-[dependencies]
 
-[dev-dependencies]
+[dependencies]
+ribble-ecs-derive = { path = "../ribble-ecs-derive", version = "0.1.0" }
+thiserror = { workspace = true }
 
 [features]
 default = []
-
